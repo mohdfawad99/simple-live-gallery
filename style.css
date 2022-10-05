@@ -48,10 +48,75 @@ img {
 }
 .gallery figure img {
   width: 100%;
-  border-radius: 10px;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
+  border-radius: 15px;
+  }
+
+  .card {
+    /* width: 71.5vw; */
+      /* // width: clamp(200px, 61vh, 18vw); */
+      /* // height: clamp(280px, 85vh, 25.2vw); */
+      @media screen and (min-width: 600px) {
+        // width: 61vh;
+        // height: 85vh;
+        // max-width: 500px;
+        // max-height: 700px;
+        width: clamp(12.9vw, 61vh, 18vw);
+        height: clamp(18vw, 85vh, 25.2vw);
+      }
+    
+    position: relative;
+    overflow: hidden;
+    /* margin: 20px; */
+    overflow: hidden;
+    z-index: 10;
+    touch-action: none;
+    
+    /* border-radius: 5% / 3.5%; */
+    box-shadow: 
+      -5px -5px 5px -5px var(--color1), 
+      5px 5px 5px -5px var(--color2), 
+      -7px -7px 10px -5px transparent, 
+      7px 7px 10px -5px transparent, 
+      0 0 5px 0px rgba(255,255,255,0),
+      0 55px 35px -20px rgba(0, 0, 0, 0.5);
+    
+    transition: transform 0.5s ease, box-shadow 0.2s ease;
+    will-change: transform, filter;
+    
+    background-color: #e6ede8;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform-origin: center;
+    
+  }
+
+  .card.active,
+  .card:hover {
+    animation: none;
+    transition: box-shadow 0.1s ease-out;
+    box-shadow: 0px 0px 10px #e6e6e6;
+  }
+
+  @keyframes holoCard {
+    0%, 100% {
+      transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+    }
+    5%, 8% {
+      transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
+    }
+    13%, 16% {
+      transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
+    }
+    35%, 38% {
+      transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
+    }
+    55% {
+      transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
+    }
+  }
+  
+
 .gallery figure figcaption {
   display: none;
 }

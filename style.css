@@ -12,6 +12,10 @@ body {
     margin: 0;	
 }
 
+h1 {
+  text-shadow: 3px 3px rgba(89, 228, 170, 0.774);
+}
+
 img {
   display: block;
   height: 400px;
